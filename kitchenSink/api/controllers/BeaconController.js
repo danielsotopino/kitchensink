@@ -7,9 +7,5 @@
 
 module.exports = {
 	
-	uuid: {
-		type: 'string'
-	}
-
 };
 

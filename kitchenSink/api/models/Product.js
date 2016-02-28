@@ -24,6 +24,10 @@ module.exports = {
   		required: true
   	},
 
+    imageUrl: {
+      type: 'string'
+    }
+
   	location: { 
       model:'Location' 
     }
