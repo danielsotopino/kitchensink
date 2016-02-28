@@ -1,7 +1,7 @@
 <div class="container-fluid" ng-controller="ListProductCtrl">
 	
 	<div class="row">
-		
+		<p ng-show="!products.length">No hay productos</p>
 		<div ng-repeat="p in products">	
 
 			<div class="col-xs-12 col-md-2 panel panel-default" style="margin:5px;">
