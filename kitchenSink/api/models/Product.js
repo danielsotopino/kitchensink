@@ -15,7 +15,8 @@ module.exports = {
   	},
 
   	description: {
-  		type: 'string'
+  		type: 'string',
+      required: true
   	},
 
   	price: {
@@ -23,9 +24,9 @@ module.exports = {
   		required: true
   	},
 
-  	location: {
-  		type: 'geopoint'
-  	}
+  	location: { 
+      model:'Location' 
+    }
 
   }
 };

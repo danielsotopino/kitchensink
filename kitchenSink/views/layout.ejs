@@ -66,8 +66,8 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos 
                 <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="#">Listar</a></li>
-                <li><a href="#">Crear</a></li>
+                <li><a href="/#/listProducts">Listar</a></li>
+                <li><a href="/#/addProduct">Crear</a></li>
               </ul>
             </li>
           </ul>
@@ -99,9 +99,10 @@
     </nav>
 
     <div ng-view="">
-
         <%- body %>
-    </body>
+    </div>
+
+  </body>
 
 
     <!--
@@ -160,6 +161,7 @@
     <script src="/bower_components/angular-route/angular-route.js"></script>
     <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
     <script src="/js/app.js"></script>
+    <script src="/js/controllers/productController.js"></script>
     <!--SCRIPTS END-->
   </body>
 </html>

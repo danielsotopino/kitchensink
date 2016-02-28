@@ -1,0 +1,56 @@
+<div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Crear Producto</div>
+		  <div class="panel-body">
+
+		    <form name="form" class="form-horizontal" role="form" ng-submit="saveProduct()" ng-controller="ProductCtrl" novalidate  >
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="name">Nombre:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="name" name="name" ng-model="productForm.name" placeholder="Ingrese Nombre" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="description">Descripcion:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="description" ng-model="productForm.description" placeholder="Ingrese Descripción" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="price">Precio:</label>
+			    <div class="col-sm-10"> 
+			      <input type="number" class="form-control" id="price" ng-model="productForm.price" placeholder="Ingrese Precio" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="address">Dirección:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="address" ng-model="productForm.location.address" placeholder="Ingrese Dirección" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="latitude">Latitud:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="latitude" name="latitude" ng-model="productForm.location.latitude" validate-lat-lng ng-model-options="{ updateOn: 'blur' }" placeholder="Ingrese Latitud" required="" />
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="longitude">Longitud:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="longitude" name="longitude" ng-model="productForm.location.longitude" validate-lat-lng ng-model-options="{ updateOn: 'blur' }" placeholder="Ingrese Longitud" required="" />
+			    </div>
+			  </div>
+			  <span ng-show="form.longitude.$error.validateLatLng || form.latitude.$error.validateLatLng">Valor inválido</span>
+			  <span ng-show="success">{{success}}</span>
+			  <div class="form-group"> 
+			    <div class="col-sm-12 text-right">
+			      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Guardar</button>
+			    </div>
+			  </div>
+			</form>
+
+		  </div>
+		</div>
+	</div>
+</div>

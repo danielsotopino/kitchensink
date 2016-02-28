@@ -9,16 +9,15 @@ kitchenSinkBackOfficeApp.config(['$routeProvider',
     }).otherwise({
       redirectTo: '/',
       caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/addProduct', {
+      templateUrl: '/templates/addProduct.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
     })
   }]);
 
 kitchenSinkBackOfficeApp.controller('AdminCtrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http, AdminService) {
-  $scope.formData = {};
-  $scope.greetings = 'No greetings today';
-  
-  $http.get('http://localhost:1337/admin/index').success(function(data){
-    $scope.greetings = data.greetings;
-    console.log('Got this data: ' + data);
-  });
 
 }]);
