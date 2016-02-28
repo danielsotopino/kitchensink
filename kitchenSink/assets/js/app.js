@@ -15,9 +15,11 @@ kitchenSinkBackOfficeApp.config(['$routeProvider',
     }).otherwise({
       redirectTo: '/',
       caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/listProducts', {
+      templateUrl: '/templates/listProducts.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
     })
   }]);
-
-kitchenSinkBackOfficeApp.controller('AdminCtrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http, AdminService) {
-
-}]);
