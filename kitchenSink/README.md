@@ -13,7 +13,7 @@ Install MongoDB<br>
 <code>brew install mongodb</code>
 
 In order to run mongodb you need to use this:<br>
-<code>mongod --dbpath=<Your chosen db path></code>
+<code>mongod --dbpath=SOME_PATH</code>
 
 To test if it's running ok:<br>
 <code>mongo</code>
