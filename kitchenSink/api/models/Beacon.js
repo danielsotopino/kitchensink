@@ -9,6 +9,14 @@ module.exports = {
 
   attributes: {
 
+  	uuid: {
+  		type: 'string'
+  	},
+
+  	product: {
+  		model: 'Product'
+  	}
+
   }
 };
 

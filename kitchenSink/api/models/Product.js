@@ -26,7 +26,7 @@ module.exports = {
 
     imageUrl: {
       type: 'string'
-    }
+    },
 
   	location: { 
       model:'Location' 
