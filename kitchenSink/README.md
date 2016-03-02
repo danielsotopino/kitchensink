@@ -1,6 +1,6 @@
 # kitchenSink
 
-Installation notes:
+Installation notes:<br>
 I'm assumming that you have installed node and npm so..
 
 Install sails<br>
