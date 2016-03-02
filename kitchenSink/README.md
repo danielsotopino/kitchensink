@@ -3,7 +3,7 @@
 Installation notes:<br>
 I'm assumming that you have installed node and npm so..
 
-Install sails<br>
+Install sailsjs<br>
 <code>npm install -g sails</code>
 
 Download the code, then write on the console:<br>
