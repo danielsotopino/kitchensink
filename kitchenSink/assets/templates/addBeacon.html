@@ -1,0 +1,43 @@
+<div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Crear Beacon</div>
+		  <div class="panel-body">
+
+		    <form name="form" class="form-horizontal" role="form" ng-submit="saveBeacon()" ng-controller="BeaconCtrl" novalidate  >
+		    	<div class="form-group">
+			    <label class="control-label col-sm-2" for="name">UUID:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="name" name="name" ng-model="beaconForm.uuid" placeholder="Ingrese UUID" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="name">Nombre:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="name" name="name" ng-model="beaconForm.name" placeholder="Ingrese Nombre" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="description">Descripcion:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="description" ng-model="beaconForm.description" placeholder="Ingrese Descripción" required="">
+			    </div>
+			  </div>
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="description">Url producto:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="imageUrl" ng-model="beaconForm.productUrl" placeholder="Ingrese URL de product" required="">
+			    </div>
+			  </div>
+			  <span ng-show="success">{{success}}</span>
+			  <div class="form-group"> 
+			    <div class="col-sm-12 text-right">
+			      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Guardar</button>
+			    </div>
+			  </div>
+			</form>
+
+		  </div>
+		</div>
+	</div>
+</div>

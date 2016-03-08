@@ -10,11 +10,23 @@ module.exports = {
   attributes: {
 
   	uuid: {
-  		type: 'string'
+  		type: 'string',
+  		required: true
   	},
 
-  	product: {
-  		model: 'Product'
+  	name: {
+  		type: 'string',
+  		required: true
+  	},
+
+  	description: {
+  		type: 'string',
+  		required: true
+  	},
+
+  	productUrl: {
+  		type: 'string',
+  		required: true
   	}
 
   }

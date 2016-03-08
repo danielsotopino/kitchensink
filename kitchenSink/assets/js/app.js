@@ -21,5 +21,17 @@ kitchenSinkBackOfficeApp.config(['$routeProvider',
     }).otherwise({
       redirectTo: '/',
       caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/addBeacon', {
+      templateUrl: '/templates/addBeacon.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/listBeacons', {
+      templateUrl: '/templates/listBeacons.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
     })
   }]);
