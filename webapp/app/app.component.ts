@@ -1,24 +1,18 @@
 import {Component} from 'angular2/core';
+import {Product} from './product';
+import {ProductDetailComponent} from './product-detail.component';
 
 @Component({
     selector: 'my-app',
     template: `		
+    			<h1>{{title}}</h1>
     			<h2>My Products</h2>
-    			<div *ngIf="selectedProduct">
-	    			<div>{{selectedProduct.name}} details:</div>
-	    			<div>
-	    				<label>id: </label>{{selectedProduct.id}}
-	    			</div>
-	    			<div>
-						<label>name: </label>
-					    <input [(ngModel)]="selectedProduct.name" placeholder="name"/>
-					</div>
-    			</div>
 				<ul class="products">
 				  <li *ngFor="#product of products" [class.selected]="product === selectedProduct" (click)="onSelect(product)">
 				    <span class="badge">{{product.id}}</span> {{product.name}}
 				  </li>
 				</ul>
+				<product-detail [product]="selectedProduct"></product-detail>
     		   `,
    	styles:[`
 			  .selected {
@@ -68,29 +62,24 @@ import {Component} from 'angular2/core';
 			    margin-right: .8em;
 			    border-radius: 4px 0 0 4px;
 			  }
-	`]
-
+	`],
+	directives: [ProductDetailComponent],
 })
 
 
 
 export class AppComponent {
 
-	public title = 'Tour of products';
+	title = 'Tour of products';
 	
-	public products = products;
+	products = products;
 
 	onSelect(product: Product) {
 		this.selectedProduct = product;
 	}
 
-	public selectedProduct: Product;
+	selectedProduct: Product;
 
-}
-
-interface Product {
-	id: int;
-	name: string;
 }
 
 var products: Product[] = [
