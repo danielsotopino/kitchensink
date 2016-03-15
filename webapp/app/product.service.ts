@@ -9,6 +9,12 @@ export class ProductService {
 		return Promise.resolve(products);
 	}
 
+	getProduct(id: number) {
+  		return Promise.resolve(products).then(
+    		products => products.filter(product => product.id === id)[0]
+  		);
+	}
+
 	getHeroesSlowly() {
     	return new Promise<Product[]>(resolve =>
       		setTimeout(()=>resolve(products), 2000) // 2 seconds
