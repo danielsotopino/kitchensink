@@ -14,14 +14,17 @@ import {ProductService} from './product.service';
 export class ProductDetailComponent implements OnInit {
 
 	product: Product;
+	errorMessage;
 	
 	constructor(
 		private _productService: ProductService,
 		private _routeParams: RouteParams) {}
 
 	ngOnInit() {
-		let id = +this._routeParams.get('id');
-		this._productService.getProduct(id).then(product => this.product = product);
+		let id = this._routeParams.get('id');
+		this._productService.getProduct(id).subscribe(
+                     product => this.product = product,
+                     error =>  this.errorMessage = <any>error);
 	}
 
 	goBack() {

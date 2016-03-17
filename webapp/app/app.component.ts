@@ -1,5 +1,6 @@
 import {Component} from 'angular2/core';
 import {RouteConfig, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from 'angular2/router';
+import {Http, Response} from 'angular2/http';
 
 import {DashboardComponent} from './dashboard.component';
 import {ProductComponent} from './product.component';
@@ -9,14 +10,7 @@ import {ProductService} from './product.service';
 
 @Component({
 	selector: 'my-app',
-	template: `
-				<h1>{{title}}</h1>
-				<nav>
-					<a [routerLink]="['Dashboard']">Dashboard</a>
-					<a [routerLink]="['Products']">Productos</a>
-				</nav>
-  				<router-outlet></router-outlet>
-			  `,
+	templateUrl: 'app/app.component.html', 
 	styleUrls: ['app/app.component.css'],
 	directives: [ROUTER_DIRECTIVES],
 	providers: [ROUTER_PROVIDERS, ProductService]
@@ -24,22 +18,22 @@ import {ProductService} from './product.service';
 })
 
 @RouteConfig([
-  {
-    path: '/products',
-    name: 'Products',
-    component: ProductComponent
-  },
-  {
+{
+	path: '/products',
+	name: 'Products',
+	component: ProductComponent
+},
+{
 	path: '/dashboard',
 	name: 'Dashboard',
 	component: DashboardComponent,
 	useAsDefault: true
-  },
-  {
-  	path: '/detail/:id',
-  	name: 'ProductDetail',
-  	component: ProductDetailComponent
-  }
+},
+{
+	path: '/detail/:id',
+	name: 'ProductDetail',
+	component: ProductDetailComponent
+}
 ])
 
 export class AppComponent {

@@ -16,6 +16,7 @@ export class ProductComponent implements OnInit {
   
 	products: Product[];
 	selectedProduct: Product;
+	errorMessage;
 
 	constructor(
 		private _productService: ProductService,
@@ -23,7 +24,9 @@ export class ProductComponent implements OnInit {
 	) { }
 
 	getProducts() {
-    	this._productService.getProducts().then(products => this.products = products);
+    	this._productService.getProducts().subscribe(
+                     products => this.products = products,
+                     error =>  this.errorMessage = <any>error);
   	}
 
   	ngOnInit() {
