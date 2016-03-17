@@ -1,7 +1,12 @@
 <div *ngIf="product">
 	<div>{{product.name}} details:</div>
 	<div>
-		<label>id: </label>{{product.id}}
+		<label>id: 	</label>{{product.id}}<br>
+		<label>name: </label>{{product.name}}<br>
+		<label>description: </label>{{product.description}}<br>
+		<label>address: </label>{{product.location.address}}<br>
+		<label>latitude: </label>{{product.location.latitude}}<br>
+		<label>longitude: </label> {{product.location.longitude}}<br>
 	</div>
 	<div>
 		<label>name: </label>
