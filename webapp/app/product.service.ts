@@ -15,7 +15,6 @@ export class ProductService {
 
 
 	getProducts() {
-		//return Promise.resolve(products);
 		return this._http.get(this._productsUrl)
 			.map(res => <Product[]> res.json())
 			.do(data => console.log(data))

@@ -19,7 +19,7 @@ export class DashboardComponent implements OnInit {
 	constructor(
 		private _router: Router,
 		private _productService: ProductService
-		) {}
+	) {}
 
 	ngOnInit() {
 		this._productService.getProducts()
