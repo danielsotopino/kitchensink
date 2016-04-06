@@ -9,8 +9,6 @@ module.exports = {
 
   authenticate: function(req, res) {
     
-    console.log('hey there: ' + req);
-
     var email = req.param('email');
     var password = req.param('password');
 

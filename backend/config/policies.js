@@ -32,18 +32,21 @@ module.exports.policies = {
     '*': false,
     'create': true,
     'find': ['tokenAuth'],
+    'destroy': ['tokenAuth'],
   },
 
   ProductController: {
     '*': false,
+    'find': ['tokenAuth'],
     'create': ['tokenAuth'],
-    'find': true,
+    'destroy': ['tokenAuth'],
   },
 
   BeaconController: {
     '*': false,
     'create': ['tokenAuth'],
-    'find': true,
+    'destroy': ['tokenAuth'],
+    'find': ['tokenAuth'],
   }
 
 

@@ -37,7 +37,7 @@ kitchenSinkBackOfficeApp.controller('ListUserCtrl', ['$scope', '$rootScope', '$h
 
 	});
 
-	$scope.delete = function(beaconId) {
+	$scope.delete = function(userId) {
 
 		$http.post('http://localhost:1337/user/destroy?id=' + userId).then(function successCallback(response) {
 			alert("Eliminación exitosa");

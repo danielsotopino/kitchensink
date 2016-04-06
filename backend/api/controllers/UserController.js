@@ -6,10 +6,6 @@
  */
 
 module.exports = {
-	
-	sayhello: function(req, res) {
-		return res.json({greetings:'Hey hello!'});
-	}
 
 };
 
