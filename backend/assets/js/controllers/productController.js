@@ -1,6 +1,6 @@
 kitchenSinkBackOfficeApp = angular.module('kitchenSinkBackOfficeApp');
 
-kitchenSinkBackOfficeApp.controller('ProductCtrl', ['$scope', '$rootScope', '$http', function($scope, $rootScope, $http) {
+kitchenSinkBackOfficeApp.controller('ProductCtrl', ['$scope', '$rootScope', '$http', '$location', function($scope, $rootScope, $http, $location) {
   	$scope.productForm = {};
 
 	$scope.saveProduct = function() {
@@ -13,7 +13,12 @@ kitchenSinkBackOfficeApp.controller('ProductCtrl', ['$scope', '$rootScope', '$ht
 
 		}, function(response) {
 
-		    $scope.success = response;
+			if (response.status == 401) {
+		    	$location.path("/login");
+			} else {
+				$scope.success = response;
+
+			}
 
 		});
 

@@ -1,1 +1,50 @@
-add
+<div class="container">
+	<div class="row">
+		<div class="panel panel-default">
+		  <div class="panel-heading">Registro</div>
+		  <div class="panel-body">
+
+		    <form name="form" class="form-horizontal" role="form" ng-submit="saveUser()" ng-controller="UserCtrl" novalidate  >
+			  
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="name">Nombre:</label>
+			    <div class="col-sm-10">
+			      <input type="text" class="form-control" id="name" name="name" ng-model="userForm.name" placeholder="Ingrese Nombre" required="">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="email">Email:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="email" ng-model="userForm.email" placeholder="Ingrese Dirección" required="">
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="latitude">Password:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="password" name="password" ng-model="userForm.password" ng-model-options="{ updateOn: 'blur' }" placeholder="Ingrese contraseña" required="" />
+			    </div>
+			  </div>
+			  
+			  <div class="form-group">
+			    <label class="control-label col-sm-2" for="longitude">Repeat Password:</label>
+			    <div class="col-sm-10"> 
+			      <input type="text" class="form-control" id="repeatPassword" name="repeatPassword" ng-model="userForm.repeatPassword" ng-model-options="{ updateOn: 'blur' }" placeholder="Las contraseñas no coinciden" required="" />
+			    </div>
+			  </div>
+			  
+			  <span ng-show="success">{{success}}</span>
+			  
+			  <div class="form-group"> 
+			    <div class="col-sm-12 text-right">
+			      <button type="submit" class="btn btn-primary" ng-disabled="form.$invalid">Guardar</button>
+			    </div>
+			  </div>
+			  
+			</form>
+
+		  </div>
+		</div>
+	</div>
+</div>

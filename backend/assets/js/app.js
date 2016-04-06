@@ -4,6 +4,25 @@ var kitchenSinkBackOfficeApp = angular.module('kitchenSinkBackOfficeApp', ['ngRo
 
 kitchenSinkBackOfficeApp.config(['$routeProvider',
   function($routeProvider) {
+
+    $routeProvider.when('/addUser', {
+      templateUrl: '/templates/addUser.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/listUsers', {
+      templateUrl: '/templates/listUsers.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
+    }),
+    $routeProvider.when('/login', {
+      templateUrl: '/templates/login.html',
+    }).otherwise({
+      redirectTo: '/',
+      caseInsensitiveMatch: true
+    }),
     $routeProvider.when('/', {
       templateUrl: '/templates/index.html',
     }).otherwise({
@@ -34,4 +53,5 @@ kitchenSinkBackOfficeApp.config(['$routeProvider',
       redirectTo: '/',
       caseInsensitiveMatch: true
     })
-  }]);
+
+}]);

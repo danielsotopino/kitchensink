@@ -1,0 +1,27 @@
+<div class="container-fluid" ng-controller="ListUserCtrl">
+	
+		<p ng-show="!beacons.length">No hay beacons</p>
+
+		<table class="table table-stripped"> 
+			<thead>
+				<tr>
+					<th>UUID</th>
+					<th>Name</th>
+					<th>Product Url</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="beacon in beacons">	
+
+					<td>{{ beacon.uuid }}</td>
+					<td>{{ beacon.name }}</td>
+					<td><a target="_blank" href="{{ beacon.productUrl }}">{{ beacon.id }}</a></td>
+					<td><button type="button" class="btn btn-danger" ng-click="delete(beacon.id)">Eliminar</button></td>
+									
+				</tr>									
+			</tbody>
+
+		</table>
+		
+</div>

@@ -22,6 +22,7 @@ kitchenSinkBackOfficeApp.controller('BeaconCtrl', ['$scope', '$rootScope', '$htt
 }]);
 
 kitchenSinkBackOfficeApp.controller('ListBeaconCtrl', ['$scope', '$route', '$http', function($scope, $route, $http) {
+	
 	$scope.beacons = {};
 	
 	$http.get('http://localhost:1337/beacon').then(function successCallback(response) {
